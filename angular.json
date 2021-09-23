@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "average-fuel-consumption": {
+      "projectType": "library",
+      "root": "projects/average-fuel-consumption",
+      "sourceRoot": "projects/average-fuel-consumption/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/average-fuel-consumption/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/average-fuel-consumption/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/average-fuel-consumption/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/average-fuel-consumption/src/test.ts",
+            "tsConfig": "projects/average-fuel-consumption/tsconfig.spec.json",
+            "karmaConfig": "projects/average-fuel-consumption/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "average-fuel-consumption"
 }
