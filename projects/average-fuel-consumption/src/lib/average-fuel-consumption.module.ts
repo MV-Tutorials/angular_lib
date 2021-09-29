@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AverageFuelConsumptionComponent } from './average-fuel-consumption.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -8,6 +9,7 @@ import { AverageFuelConsumptionComponent } from './average-fuel-consumption.comp
     AverageFuelConsumptionComponent
   ],
   imports: [
+    ReactiveFormsModule
   ],
   exports: [
     AverageFuelConsumptionComponent

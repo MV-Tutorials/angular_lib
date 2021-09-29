@@ -1,20 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormControl} from "@angular/forms";
 
 @Component({
   selector: 'lib-average-fuel-consumption',
-  template: `
-    <p>
-      average-fuel-consumption works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './avarage-fuel-consuption.component.html',
+  styles: []
 })
 export class AverageFuelConsumptionComponent implements OnInit {
 
-  constructor() { }
+  avaregeConsuptionForm = new FormGroup({
+    consuption: new FormControl(''),
+    distance: new FormControl(''),
+  });
+
+  result = 0;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    this.result = this.avaregeConsuptionForm.value.consuption / this.avaregeConsuptionForm.value.distance
   }
 
 }

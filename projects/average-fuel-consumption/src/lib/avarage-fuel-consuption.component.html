@@ -1,0 +1,20 @@
+<h3>Avarage fule consuption</h3>
+<form [formGroup]="avaregeConsuptionForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="consumptionFeld">Consuption</label>
+    <input type="number" class="form-control" id="consumptionFeld" aria-describedby="consuptionFeldHelp" placeholder="0"
+           formControlName="consuption">
+    <small id="consumptionFeldHelp" class="form-text text-muted"></small>
+  </div>
+
+  <div class="form-group">
+    <label for="distanceFeld">Distance</label>
+    <input type="number" class="form-control" id="distanceFeld" aria-describedby="distanceFelddHelp" placeholder="0"
+           formControlName="distance">
+    <small id="distanceFelddHelp" class="form-text text-muted"></small>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div> Avarage consuption is: {{this.result}} km/h</div>
